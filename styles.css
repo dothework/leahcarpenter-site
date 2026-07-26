@@ -148,7 +148,7 @@ main { position: relative; z-index: 1; }
   font-variation-settings: "SOFT" 40;
   max-width: 15ch;
 }
-.headline span { display: block; }
+.headline .line { display: block; }
 .headline .italic {
   display: inline;
   font-style: italic;
@@ -157,10 +157,10 @@ main { position: relative; z-index: 1; }
 }
 .cursor {
   display: inline-block;
-  width: 0.55ch; height: 0.9em;
+  width: 0.12em; height: 0.82em;
   background: var(--ink);
-  vertical-align: -0.08em;
-  margin-left: 0.08em;
+  vertical-align: -0.05em;
+  margin-left: 0.12em;
   animation: blink 1.05s steps(1) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
