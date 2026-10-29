@@ -1,188 +1,177 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Leah Carpenter — Practical AI Consulting</title>
-<meta name="description" content="Practical AI consulting. Smarter systems. Measurable results. Human at the core." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F1E8'/%3E%3Ctext x='16' y='21' font-family='ui-monospace,monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23171512'%3ELC%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="./styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leah Carpenter | Senior Advisor</title>
+<meta name="description" content="Senior Advisor in change management, operational efficiency, and practical AI. The fixer who makes your business run better. Grand Rapids, MI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F1E8'/%3E%3Ctext x='16' y='21' font-family='ui-monospace,monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23171512'%3ELC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: matches her current site. Cream page, heavy serif headlines with one coral italic word, mono caps labels, hairline dividers between sections. */
+:root {
+  --bg: #f4efe8;
+  --ink: #181712;
+  --muted: #4a473f;
+  --line: #d9d3c6;
+  --accent: #c9504c;
+  --btn-bg: #181712;
+  --btn-ink: #f4efe8;
+  --note-bg: #ebe4d6;
+  --font-display: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17150f; --ink: #f3eee6; --muted: #bdb6a8; --line: #373329; --accent: #e07a74;
+    --btn-bg: #f3eee6; --btn-ink: #17150f; --note-bg: #221f17; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17150f; --ink: #f3eee6; --muted: #bdb6a8; --line: #373329; --accent: #e07a74;
+  --btn-bg: #f3eee6; --btn-ink: #17150f; --note-bg: #221f17; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-display);
+  font-size: 18px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 64px;
+}
+.wrap { max-width: 1000px; margin: 0 auto; }
+.note {
+  background: var(--note-bg); border-radius: 4px; padding: 10px 14px;
+  font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted);
+}
+.label {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
+}
+.dot { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); flex: none; }
+
+.hero { padding: 56px 0 56px; display: flex; flex-direction: column; gap: 26px; border-bottom: 1px solid var(--line); }
+h1 {
+  font-weight: 700; font-size: clamp(40px, 8.4vw, 84px); line-height: 1.02; letter-spacing: -.02em;
+  margin: 0; text-wrap: balance;
+}
+h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.sub { font-size: clamp(20px, 2.8vw, 26px); line-height: 1.4; margin: 0; max-width: 34em; }
+.sub em { font-style: italic; }
+.btns { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 28px; }
+.btn {
+  background: var(--btn-bg); color: var(--btn-ink); font-family: var(--font-mono); font-size: 14px;
+  letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 17px 26px; border-radius: 3px;
+}
+.link {
+  color: var(--ink); font-family: var(--font-mono); font-size: 14px; letter-spacing: .1em;
+  text-transform: uppercase; text-decoration: none; border-bottom: 1.5px solid var(--ink); padding-bottom: 4px;
+}
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
+h2 { font-weight: 700; font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+h2 em { font-style: italic; font-weight: 400; color: var(--accent); }
+
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 40px; }
+.svc { padding: 20px 0 22px; border-top: 1px solid var(--line); min-width: 0; }
+.svc h3 { font-size: 21px; font-weight: 700; margin: 0 0 6px; line-height: 1.25; }
+.svc p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.5; }
+
+.steps { display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 700; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 0; padding: 0; list-style: none; }
+.steps li:not(:last-child)::after { content: "·"; color: var(--accent); margin-left: 22px; }
+.body-text { margin: 0; max-width: 34em; color: var(--muted); }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.two > div { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.two p { margin: 0; max-width: 34em; }
+.photo { width: 100%; max-width: 260px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; display: block; border: 1px solid var(--line); }
+.proof { font-style: italic; }
+.start { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.quote { background: var(--note-bg); border-left: 3px solid var(--accent); border-radius: 3px; padding: 16px 18px; margin: 0; font-style: italic; color: var(--muted); }
+
+.close { align-items: flex-start; border-bottom: 0; }
+.close p { font-weight: 700; font-size: clamp(32px, 6vw, 58px); line-height: 1.08; letter-spacing: -.02em; margin: 0; text-wrap: balance; max-width: 16em; }
+.close p em { font-style: italic; font-weight: 400; color: var(--accent); }
+html { scroll-behavior: smooth; }
+.contact { margin: 0; display: grid; gap: 0; width: 100%; max-width: 640px; }
+.contact > div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); align-items: baseline; }
+.contact > div:last-child { border-bottom: 1px solid var(--line); }
+.contact dt { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.contact dd { margin: 0; font-size: 20px; min-width: 0; overflow-wrap: anywhere; }
+.contact a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+.contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+@media (max-width: 480px) { .contact > div { grid-template-columns: 80px 1fr; gap: 12px; } .contact dd { font-size: 17px; } }
+</style>
+
 </head>
 <body>
+<div class="wrap">
 
-<div class="scanlines" aria-hidden="true"></div>
-
-<header class="nav">
-  <a class="mono monogram" href="#" aria-label="Leah Carpenter, home">
-    <span class="mono-box">LC</span>
-    <span class="mono-name">Leah Carpenter</span>
-  </a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#credentials">Credentials</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-
-  <section class="hero">
-    <p class="mono eyebrow"><span class="dot"></span> Practical AI · Grand Rapids, MI</p>
-    <h1 class="headline">
-      <span class="line">Smarter systems.</span>
-      <span class="line">Measurable results.</span>
-      <span class="line"><span class="italic">Human</span> at the core.<span class="cursor" aria-hidden="true"></span></span>
-    </h1>
-    <p class="lede">
-      I help businesses unlock growth, efficiency, and innovation by making AI
-      <em>strategic</em>, <em>practical</em>, and <em>people-focused</em>.
-    </p>
-    <div class="cta-row">
-      <a href="#contact" class="btn">Book a discovery call</a>
-      <a href="#services" class="link-arrow">See how it works <span aria-hidden="true">→</span></a>
+  <header class="hero">
+    <div class="label"><span class="dot"></span>Change management · Operational efficiency · Practical AI · Grand Rapids, MI</div>
+    <h1>The <em>fixer</em> who makes your business run better.</h1>
+    <p class="sub">Senior Advisor in change management, operational efficiency, and practical AI. Find what's holding your business back and <em>fix it</em> with the people who run it. Smoother operations, stronger leaders, better profitability. <em>Human</em> at the core.</p>
+    <div class="btns">
+      <a class="btn" href="#contact">Book a discovery call</a>
+      <a class="link" href="#how">See how it works →</a>
     </div>
+  </header>
 
-    <!-- Signal motif -->
-    <div class="signal" aria-hidden="true">
-      <svg viewBox="0 0 600 60" preserveAspectRatio="none">
-        <line x1="0" y1="30" x2="600" y2="30" class="signal-base"/>
-        <path id="signal-wave" d="" class="signal-wave"/>
-        <circle id="signal-dot" cx="0" cy="30" r="4" class="signal-dot"/>
-      </svg>
-      <div class="signal-caption mono">
-        <span>signal</span><span class="signal-sep">·</span><span>not noise</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section" id="services">
-    <header class="section-head">
-      <span class="mono section-num">01 —</span>
-      <h2 class="section-title">Services</h2>
-      <p class="section-kicker">Three ways to work together. Each mapped to where AI actually moves the needle.</p>
-    </header>
-
+  <section>
+    <div class="label"><span class="dot"></span>What I do</div>
     <div class="services">
-      <article class="service">
-        <div class="service-index mono">S/01</div>
-        <h3>AI Consulting</h3>
-        <p>Tailored strategies to identify where AI can make the biggest impact in your workflows, decision-making, and customer experience.</p>
-        <ul class="service-tags mono">
-          <li>Strategy</li><li>Discovery</li><li>Roadmap</li>
-        </ul>
-      </article>
-
-      <article class="service">
-        <div class="service-index mono">S/02</div>
-        <h3>AI Workflow Solutions</h3>
-        <p>Step-by-step integrations that simplify complexity, save time, reduce costs, and accelerate results across the business.</p>
-        <ul class="service-tags mono">
-          <li>Automation</li><li>Integrations</li><li>Ops</li>
-        </ul>
-      </article>
-
-      <article class="service">
-        <div class="service-index mono">S/03</div>
-        <h3>Implementation Support</h3>
-        <p>Guidance through planning, setup, and adoption — giving your business confidence and clarity while scaling AI effectively.</p>
-        <ul class="service-tags mono">
-          <li>Rollout</li><li>Training</li><li>Adoption</li>
-        </ul>
-      </article>
+      <div class="svc"><h3>Discovery and Systems Audits</h3><p>Interviews and observation across every department that reveal where time, money, and good ideas are getting lost.</p></div>
+      <div class="svc"><h3>Process Improvement</h3><p>Streamlined workflows, SOPs, and service standards that increase operational efficiency.</p></div>
+      <div class="svc"><h3>Change Management</h3><p>Training and coaching so new systems are adopted and actually stick.</p></div>
+      <div class="svc"><h3>Learning and Development</h3><p>Curriculum, coaching, and training your own people can deliver.</p></div>
+      <div class="svc"><h3>Culture and Retention</h3><p>Helping people feel valued, stay longer, and bring great people in.</p></div>
+      <div class="svc"><h3>Practical AI Adoption</h3><p>Automation and training that take repetitive work off your people's plates.</p></div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section about" id="about">
-    <header class="section-head">
-      <span class="mono section-num">02 —</span>
-      <h2 class="section-title">About</h2>
-      <p class="section-kicker">Seventeen years teaching. A decade leading hospitality teams. Now translating AI into results.</p>
-    </header>
+  <section id="how">
+    <div class="label"><span class="dot"></span>How I work</div>
+    <ul class="steps"><li>Listen</li><li>Diagnose</li><li>Build</li><li>Sustain</li></ul>
+    <p class="body-text">It starts with listening to your leaders and teams and watching how work really gets done. From there, the bottlenecks get mapped, right-sized solutions get built together with your people, and the work continues through rollout until it's simply how you operate.</p>
+  </section>
 
-    <div class="about-grid">
-      <div class="about-body">
-        <p class="pull">I've always believed that real leadership is about fueling others with energy and possibility.</p>
-        <p>As a teacher, I spent <strong>17 years</strong> helping students grow, believe in themselves, and transform their futures. Later, in hospitality management, I led restaurant teams to excel under high standards without losing their sense of care and connection.</p>
-        <p>Wherever I've been, my mission has stayed the same: <em>lifting others up to reach new levels of success.</em></p>
-        <p>Today, I channel that same commitment into AI consulting — helping businesses not just adapt to new technologies but elevate <em>because</em> of them. I specialize in translating complex AI ideas into clear, actionable strategies that actually move the needle.</p>
-        <p>For me, it's not about the tools. It's about empowering people and organizations to achieve outcomes they never thought possible.</p>
-      </div>
-      <aside class="about-side">
-        <dl class="facts mono">
-          <div><dt>Based</dt><dd>Grand Rapids, MI</dd></div>
-          <div><dt>Experience</dt><dd>17 yrs teaching · hospitality leadership</dd></div>
-          <div><dt>Focus</dt><dd>Strategy · workflow · adoption</dd></div>
-          <div><dt>Approach</dt><dd>Human-first, tool-agnostic</dd></div>
-        </dl>
-      </aside>
+  <section>
+    <div class="label"><span class="dot"></span>Recent work</div>
+    <p class="body-text">Senior Advisor to a family-owned manufacturer, April to October 2026. One thread ran through all of it: find what's holding the business back, then build the fix with the people who run it.</p>
+    <div class="services">
+      <div class="svc"><h3>Clearer systems</h3><p>Discovery and audits across departments, then standards, SOPs, and documentation that give teams one clear way to work, with a plan to keep them current.</p></div>
+      <div class="svc"><h3>Stronger leaders and teams</h3><p>Curriculum, coaching, and training built for in-house delivery, so leaders and new team members are set up to succeed long after the engagement ends.</p></div>
+      <div class="svc"><h3>Smarter, simpler work</h3><p>Practical AI and process improvements that remove unnecessary steps and give people their time back for the work that matters.</p></div>
     </div>
   </section>
 
-  <!-- Credentials -->
-  <section class="section" id="credentials">
-    <header class="section-head">
-      <span class="mono section-num">03 —</span>
-      <h2 class="section-title">Why you can trust me</h2>
-      <p class="section-kicker">Strategic insight and real implementation support — so you can adopt AI with clarity and confidence.</p>
-    </header>
-
-    <div class="creds">
-      <div class="cred">
-        <div class="cred-num mono">01</div>
-        <h3>World-class credentials</h3>
-        <p>Certified in <strong>AI Assisted Consulting, Data Science, and AI Implementation</strong> through Industry Rockstar's AI Consultant Certification program.</p>
+  <section>
+    <div class="two">
+      <div>
+        <div class="label"><span class="dot"></span>Who I work with</div>
+        <p>Owner-led businesses that have outgrown the way things have always been done, ready to work smarter with people at the core.</p>
       </div>
-      <div class="cred">
-        <div class="cred-num mono">02</div>
-        <h3>A network of trusted experts</h3>
-        <p>You're not just hiring one person. You gain access to a trusted network across strategy, systems, operations, and implementation — the right people, on the right project.</p>
-      </div>
-      <div class="cred">
-        <div class="cred-num mono">03</div>
-        <h3>Ongoing training</h3>
-        <p>I stay current on what's actually working — in AI tools, and in how businesses position, package, and scale AI-driven services. Currently in advanced master classes in personal branding and business building.</p>
+      <div>
+        <div class="label"><span class="dot"></span>About</div>
+        <img class="photo" alt="Leah Carpenter" src="images/leah-carpenter-headshot.jpg" width="260" height="260">
+        <p>A teacher at heart. It started in the classroom, and for decades that way of working has shaped every role: making complex things clear, building curriculum, and helping people grow. In hospitality leadership, it built strong teams. That meant hiring, training, and coaching people to do great work while owning the operations and the numbers behind it. Part teacher, part operator, part <em>fixer</em>.</p>
+        <p>Certified in AI Assisted Consulting, Data Science, and AI Implementation, with 2,500+ hours of applied AI training. AI is one tool in the toolbox, never the whole answer.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <header class="section-head">
-      <span class="mono section-num">04 —</span>
-      <h2 class="section-title">Let's start the conversation</h2>
-      <p class="section-kicker">Want to see what AI could look like in your business? Let's talk about what you're building — and how to make it smarter.</p>
-    </header>
-
-    <div class="contact-card">
-      <div class="contact-row">
-        <span class="mono contact-label">Email</span>
-        <a class="contact-value" href="mailto:results@leahcarpenter.com">results@leahcarpenter.com</a>
-      </div>
-      <div class="contact-row">
-        <span class="mono contact-label">Phone</span>
-        <a class="contact-value" href="tel:+16169017225">(616) 901-7225</a>
-      </div>
-      <div class="contact-row">
-        <span class="mono contact-label">Serving</span>
-        <span class="contact-value">Grand Rapids, MI · remote nationwide</span>
-      </div>
-      <a href="mailto:results@leahcarpenter.com" class="btn btn-lg">Send a note →</a>
-    </div>
+  <section class="close" id="contact">
+    <p>Tell me what's not working. Let's <em>fix it</em>.</p>
+    <dl class="contact">
+      <div><dt>Email</dt><dd><a href="mailto:results@leahcarpenter.com">results@leahcarpenter.com</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+16169017225">(616) 901-7225</a></dd></div>
+      <div><dt>Serving</dt><dd>Grand Rapids, MI · remote nationwide</dd></div>
+    </dl>
+    <div class="btns"><a class="btn" href="mailto:results@leahcarpenter.com?subject=Discovery%20call">Book a discovery call</a></div>
   </section>
+</div>
 
-</main>
-
-<footer class="foot">
-  <span class="mono">© <span id="year">2026</span> Leah Carpenter · Practical AI Consulting</span>
-  <span class="mono">Made in Michigan</span>
-</footer>
-
-<script src="./app.js"></script>
 </body>
 </html>
